@@ -1,8 +1,10 @@
+#include <gepEngine/gepEngine.h>
 #include <iostream>
+using namespace gepEngine;
 
 int main()
 {
-	std::cout << "Yo Whaddup\n";
+	Shared<Core> core = Core::initialize();
 
 	return 0;
 }
