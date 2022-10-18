@@ -8,16 +8,20 @@ namespace gepEngine
 
 	struct Entity
 	{
-		/*template <typename T>
+		template <typename T>
 		std::shared_ptr<T> addComponent()
 		{
-			std::shared_ptr
-		}*/
+			std::shared_ptr<T> rtn = std::make_shared<T>();
+
+			m_components.push_back(rtn);
+
+			return rtn;
+		}
 
 	private:
 		friend struct Core;
 
-		//std::vector<std::shared_ptr<Component> > m_components;
+		std::vector<std::shared_ptr<Component> > m_components;
 
 		void tick();
 		void display();
