@@ -9,6 +9,10 @@ add_library(gepEngine
 	src/gepEngine/core.cpp
 	src/gepEngine/core.h
 	src/gepEngine/gepEngine.h
+	src/gepEngine/entity.h
+	src/gepEngine/entity.cpp
+	src/gepEngine/component.h
+	src/gepEngine/component.cpp
 )
 
 add_executable(game
