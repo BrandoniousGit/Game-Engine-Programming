@@ -8,13 +8,16 @@ namespace gepEngine
 	struct Component
 	{
 	private:
-		friend struct Enitity;
+		friend struct Entity;
 
-		virtual void onTick();
-		virtual void onDisplay();
+		virtual void OnTick();
+		virtual void OnDisplay();
 
-		void tick();
-		void display();
+		virtual void OnInitialize();
+
+		void Tick();
+		void Display();
+		void Initialize();
 	};
 }
 

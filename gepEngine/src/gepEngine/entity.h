@@ -23,7 +23,8 @@ namespace gepEngine
 
 		std::vector<std::shared_ptr<Component> > m_components;
 
-		void tick();
-		void display();
+		void Initialize();
+		void Tick();
+		void Display();
 	};
 }

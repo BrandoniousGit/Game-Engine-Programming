@@ -48,16 +48,32 @@ namespace gepEngine
 	{
 		m_running = true;
 
+		for (auto it = m_entities.begin(); it != m_entities.end(); it++)
+		{
+			(*it)->Initialize();
+		}
+
 		while (m_running)
 		{
+			SDL_Event event = { 0 };
+			while (SDL_PollEvent(&event))
+			{
+				if (event.type == SDL_QUIT)
+				{
+					m_running = false;
+				}
+			}
+			rend::Renderer r(1080, 720);
 			for (auto it = m_entities.begin(); it != m_entities.end(); it++)
 			{
-				(*it)->tick();
+				(*it)->Tick();
 			}
+			r.clear();
 			for (auto it = m_entities.begin(); it != m_entities.end(); it++)
 			{
-				(*it)->display();
+				(*it)->Display();
 			}
+			SDL_GL_SwapWindow(m_window);
 		}
 	}
 

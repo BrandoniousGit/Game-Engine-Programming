@@ -11,7 +11,7 @@ namespace gepEngine
 		rend::Renderer m_renderer;
 		rend::Shader m_shader;
 		rend::Mesh m_mesh;
-		void onInitialize();
-		void onDisplay();
+		void OnInitialize();
+		void OnDisplay();
 	};
 }

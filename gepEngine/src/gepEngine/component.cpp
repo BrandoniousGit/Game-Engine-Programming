@@ -2,16 +2,22 @@
 
 namespace gepEngine
 {
-	void Component::onTick() {}
-	void Component::onDisplay() {}
+	void Component::OnTick() {}
+	void Component::OnDisplay() {}
+	void Component::OnInitialize() {}
 
-	void Component::tick()
+	void Component::Tick()
 	{
-		onTick();
+		OnTick();
 	}
 
-	void Component::display()
+	void Component::Display()
 	{
-		onDisplay();
+		OnDisplay();
+	}
+
+	void Component::Initialize()
+	{
+		OnInitialize();
 	}
 }
