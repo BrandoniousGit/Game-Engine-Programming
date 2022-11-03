@@ -1,5 +1,6 @@
 #include "core.h"
 #include "entity.h"
+#include "transform.h"
 
 #include <stdexcept>
 
@@ -39,6 +40,10 @@ namespace gepEngine
 	{
 		std::shared_ptr<Entity> rtn = std::make_shared<Entity>();
 
+		rtn->m_transform = rtn->addComponent<Transform>();
+
+		rtn->m_self = rtn;
+		rtn->m_core = m_self;
 		m_entities.push_back(rtn);
 
 		return rtn;
@@ -52,6 +57,8 @@ namespace gepEngine
 		{
 			(*it)->Initialize();
 		}
+
+		//Loop
 
 		while (m_running)
 		{

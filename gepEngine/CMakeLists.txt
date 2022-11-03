@@ -33,8 +33,11 @@ add_library(gepEngine
 	src/gepEngine/entity.cpp
 	src/gepEngine/component.h
 	src/gepEngine/component.cpp
+	src/gepEngine/transform.cpp
+	src/gepEngine/transform.h
 	src/gepEngine/triangleRenderer.h
 	src/gepEngine/triangleRenderer.cpp
+	src/gepEngine/glmWrap.h
 )
 
 target_link_libraries(gepEngine

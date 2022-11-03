@@ -1,5 +1,6 @@
 #ifndef GEPENGINE_COMPONENT_H
 #define GEPENGINE_COMPONENT_H
+#include <memory>
 
 namespace gepEngine
 {
@@ -18,6 +19,10 @@ namespace gepEngine
 		void Tick();
 		void Display();
 		void Initialize();
+
+	protected:
+		std::weak_ptr<Component> m_self;
+		std::weak_ptr<Entity> m_entity;
 	};
 }
 
