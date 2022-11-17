@@ -2,6 +2,8 @@
 #include <memory>
 #include <list>
 
+#include <AL/al.h>
+#include <AL/alc.h>
 #include <SDL2/SDL.h>
 #include <GL/glew.h>
 #include <rend/rend.h>
@@ -18,6 +20,9 @@ namespace gepEngine
 		void stop();
 
 	private:
+		ALCcontext *m_audioContext;
+		ALCdevice *m_audioDevice;
+
 		bool m_running; //Flag to keep engine running
 		SDL_Window* m_window;
 		SDL_GLContext m_context;

@@ -28,22 +28,35 @@ target_link_libraries(rend glew32 opengl32)
 add_library(gepEngine
 	src/gepEngine/core.cpp
 	src/gepEngine/core.h
+
 	src/gepEngine/gepEngine.h
+
 	src/gepEngine/entity.h
 	src/gepEngine/entity.cpp
+
 	src/gepEngine/component.h
 	src/gepEngine/component.cpp
+
 	src/gepEngine/transform.cpp
 	src/gepEngine/transform.h
+
 	src/gepEngine/triangleRenderer.h
 	src/gepEngine/triangleRenderer.cpp
+
 	src/gepEngine/glmWrap.h
+
+	src/gepEngine/AudioSource.cpp
+	src/gepEngine/AudioSource.h
+
+	src/gepEngine/AudioClip.cpp
+	src/gepEngine/AudioClip.h
 )
 
 target_link_libraries(gepEngine
 	glew32
 	SDL2
 	rend
+	OpenAL32
 )
 
 add_executable(game
@@ -51,5 +64,7 @@ add_executable(game
 	src/game/testScene.cpp
 	src/game/testScene.h
 )
+
+target_link_libraries(game openal32)
 
 target_link_libraries(game gepEngine)
