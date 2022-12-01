@@ -1,3 +1,7 @@
+#ifndef GEPENGINE_TRIANGLERENDERER_H
+#define GEPENGINE_TRIANGLERENDERER_H
+
+
 #include "component.h"
 #include <rend/rend.h>
 
@@ -10,8 +14,8 @@ namespace gepEngine
 	private:
 		rend::Shader m_shader;
 		rend::Mesh m_mesh;
-		rend::Renderer m_renderer;
-		void OnInitialize();
+
 		void OnDisplay();
 	};
 }
+#endif

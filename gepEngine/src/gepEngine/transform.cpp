@@ -19,9 +19,4 @@ namespace gepEngine
 
 		return translateMat * rotateMat * scaleMat;
 	}
-
-	void Transform::OnTick()
-	{
-		m_position += vec3(0.01f, 0.0f, 0.0f);
-	}
 }

@@ -1,6 +1,23 @@
 cmake_minimum_required(VERSION 3.0)
 project(GEPENGINE)
 
+if(${CMAKE_SYSTEM_NAME} MATCHES "Emscripten")
+  include_directories(
+    src
+    contrib/emcc-emscripten-wasm/include
+  )
+
+  link_directories(
+    contrib/emcc-emscripten-wasm/lib
+  )
+
+ set(CMAKE_EXECUTABLE_SUFFIX ".html")
+ set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -sNO_DISABLE_EXCEPTION_CATCHING --preload-file ${CMAKE_SOURCE_DIR}/resources@resources")
+ set(LIBOPENAL openal)
+ set(LIBOPENGL GL)
+ set(LIBGLEW GLEW)
+
+else()
 include_directories(
 	src
 	contrib/windows-cl-amd64/include
@@ -9,6 +26,12 @@ include_directories(
 link_directories(
 	${PROJECT_SOURCE_DIR}/contrib/windows-cl-amd64/lib
 )
+
+set(LIBOPENAL openal32)
+set(LIBOPENGL opengl32)
+set(LIBGLEW glew32)
+
+endif()
 
 add_library(rend
 	 src/rend/Animation.cpp
@@ -23,7 +46,7 @@ add_library(rend
 	 src/rend/rendmath.cpp
 )
 
-target_link_libraries(rend glew32 opengl32)
+target_link_libraries(rend ${LIBGLEW} ${LIBOPENGL})
 
 add_library(gepEngine
 	src/gepEngine/core.cpp
@@ -53,18 +76,13 @@ add_library(gepEngine
 )
 
 target_link_libraries(gepEngine
-	glew32
 	SDL2
 	rend
-	OpenAL32
+	${LIBOPENAL}
 )
 
 add_executable(game
 	src/game/main.cpp
-	src/game/testScene.cpp
-	src/game/testScene.h
 )
-
-target_link_libraries(game openal32)
 
 target_link_libraries(game gepEngine)

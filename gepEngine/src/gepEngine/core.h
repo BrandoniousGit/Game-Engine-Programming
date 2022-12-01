@@ -1,7 +1,7 @@
 #define SDL_MAIN_HANDLED
 #include <memory>
 #include <list>
-
+                                                              
 #include <AL/al.h>
 #include <AL/alc.h>
 #include <SDL2/SDL.h>

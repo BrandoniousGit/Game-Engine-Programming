@@ -21,4 +21,9 @@ namespace gepEngine
 	{
 		OnInitialize();
 	}
+
+	std::shared_ptr<Entity> Component::getEntity() const
+	{
+		return m_entity.lock();
+	}
 }

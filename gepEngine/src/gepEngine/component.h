@@ -8,6 +8,9 @@ namespace gepEngine
 
 	struct Component
 	{
+	public:
+		std::shared_ptr<Entity> getEntity() const;
+
 	private:
 		friend struct Entity;
 
