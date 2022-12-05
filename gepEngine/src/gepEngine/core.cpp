@@ -7,7 +7,7 @@
 namespace gepEngine
 {
 
-	std::shared_ptr<Core> Core::initialize() //Engine core
+	std::shared_ptr<Core> Core::Initialize() //Engine core
 	{
 		std::shared_ptr<Core> rtn = std::make_shared<Core>();
 		rtn->m_self = rtn;
@@ -64,11 +64,11 @@ namespace gepEngine
 		return rtn;
 	}
 
-	std::shared_ptr<Entity> Core::addEntity() //Function to add entity to scene
+	std::shared_ptr<Entity> Core::AddEntity() //Function to add entity to scene
 	{
 		std::shared_ptr<Entity> rtn = std::make_shared<Entity>();
 
-		rtn->m_transform = rtn->addComponent<Transform>();
+		rtn->m_transform = rtn->AddComponent<Transform>();
 
 		rtn->m_self = rtn;
 		rtn->m_core = m_self;
@@ -77,7 +77,7 @@ namespace gepEngine
 		return rtn;
 	}
 
-	void Core::start() //Runs once on engine start
+	void Core::Start() //Runs once on engine start
 	{
 		m_running = true;
 
@@ -112,7 +112,7 @@ namespace gepEngine
 		}
 	}
 
-	void Core::stop() //Runs once on engine quit
+	void Core::Stop() //Runs once on engine quit
 	{
 		m_running = false;
 	}

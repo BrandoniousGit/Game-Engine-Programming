@@ -2,7 +2,7 @@
 
 namespace gepEngine
 {
-	rend::mat4 Transform::getModel()
+	rend::mat4 Transform::GetModel()
 	{
 		mat4 translateMat = mat4(1.0f);
 		mat4 rotateMat = mat4(1.0f);

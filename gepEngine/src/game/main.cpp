@@ -7,34 +7,46 @@ void load_ogg(const std::string&, std::vector<unsigned char>&, ALenum&, ALsizei&
 
 struct Update : Component
 {
+	void OnInitialize()
+	{
+		GetEntity()->GetTransform()->SetPosition(vec3(0.0f, 1.5f, 0.0f));
+	}
+
 	void OnTick()
 	{
-		getEntity()->getTransform()->addRotation(glm::vec3(1.0f, 1.0f, 1.5f));
+		GetEntity()->GetTransform()->AddPosition(vec3(0.0f, -0.001f, 0.0f));
 	}
 };
+
 struct Update2 : Component
 {
 	void OnTick()
 	{
-		getEntity()->getTransform()->setPosition(glm::vec3(0, 1, 0));
-		getEntity()->getTransform()->addRotation(glm::vec3(-1.0f, -1.0f, -1.5f));
+		
 	}
 };
 
 int main()
 {
-	std::shared_ptr<Core> core = Core::initialize();
+	std::shared_ptr<Core> core = Core::Initialize();
 
-	std::shared_ptr<Entity> e = core->addEntity();
-	std::shared_ptr<Entity> e2 = core->addEntity();
+	//Entity 1 ====================
+	std::shared_ptr<Entity> e = core->AddEntity();
+	e->AddComponent<Update>();
+	e->AddComponent<TriangleRenderer>();
+	e->AddComponent<BoxCollider>();
+	e->AddComponent<Rigidbody>();
+
 	//std::shared_ptr<AudioSource> as = e->addComponent<AudioSource>();
 	//as->setAudio(core->getResources()->load<Audio>("audio/horn"));
 	//as->setLoop(true);
-	e->addComponent<Update>();
-	e->addComponent<TriangleRenderer>();
-	e2->addComponent<Update2>();
-	e2->addComponent<TriangleRenderer>();
-	//e->addComponent<AudioSource>();
+
+	//Entity 2 ====================
+	std::shared_ptr<Entity> e2 = core->AddEntity();
+	e2->AddComponent<Update2>();
+	e2->AddComponent<TriangleRenderer>();
+	e2->AddComponent<BoxCollider>();
+	e2->AddComponent<Rigidbody>();
 
 	core->start();
 

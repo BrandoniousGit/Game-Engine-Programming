@@ -1,6 +1,7 @@
 #define SDL_MAIN_HANDLED
 #include <memory>
 #include <list>
+#include <vector>
                                                               
 #include <AL/al.h>
 #include <AL/alc.h>
@@ -13,12 +14,33 @@ namespace gepEngine
 	struct Entity;
 	struct Core
 	{
-		static std::shared_ptr<Core> initialize();
-		std::shared_ptr<Entity> addEntity();
+		static std::shared_ptr<Core> Initialize();
+		std::shared_ptr<Entity> AddEntity();
 
-		void start();
-		void stop();
+		void Start();
+		void Stop();
 
+		template <typename T>
+		void Find(std::vector<std::shared_ptr<T>>& _out)
+		{
+			// Go through each Entity in Core.
+			for (std::list<std::shared_ptr<Entity>>::iterator it = m_entities.begin(); it != m_entities.end(); ++it)
+			{
+				std::shared_ptr<Entity> e = *it;
+				// Go through each Component in Entity.
+				for (std::list<std::shared_ptr<Component>>::iterator itt = e->m_components.begin(); itt != e->m_components.end(); ++itt)
+				{
+					std::shared_ptr<Component> c = *itt;
+					// Try to dynamic cast the Component to a T.
+					std::shared_ptr<T> t = std::dynamic_pointer_cast<T>(c);
+					// If succeeds then add it to the output array.
+					if (t)
+					{
+						_out.push_back(t);
+					}
+				}
+			}
+		}
 	private:
 		ALCcontext *m_audioContext;
 		ALCdevice *m_audioDevice;

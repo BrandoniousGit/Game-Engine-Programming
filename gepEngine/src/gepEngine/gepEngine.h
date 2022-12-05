@@ -8,6 +8,8 @@
 #include "transform.h"
 #include "AudioClip.h"
 #include "AudioSource.h"
+#include "BoxCollider.h"
+#include "Rigidbody.h"
 
 #define Shared std::shared_ptr
 

@@ -16,24 +16,24 @@ namespace gepEngine
 		*
 		* \return The generated model matrix
 		*/
-		rend::mat4 getModel();
+		rend::mat4 GetModel();
 		/**
 		* Set the position.
 		*
 		* \param _position The new position
 		*/
 		//Setter
-		void setPosition(const vec3& _position) { m_position = _position; }
-		void setRotation(const vec3& _rotation) { m_rotation = _rotation; }
-		void setScale(const vec3& _scale) { m_scale = _scale; }
+		void SetPosition(const vec3& _position) { m_position = _position; }
+		void SetRotation(const vec3& _rotation) { m_rotation = _rotation; }
+		void SetScale(const vec3& _scale) { m_scale = _scale; }
 
-		void addPosition(const vec3& _position) { m_position += _position; }
-		void addRotation(const vec3& _rotation) { m_rotation += _rotation; }
+		void AddPosition(const vec3& _position) { m_position += _position; }
+		void AddRotation(const vec3& _rotation) { m_rotation += _rotation; }
 
 		//Getters
-		const vec3 getPosition() { return m_position; }
-		const vec3 getRotation() { return m_rotation; }
-		const vec3 getScale() { return m_scale; }
+		const vec3 GetPosition() { return m_position; }
+		const vec3 GetRotation() { return m_rotation; }
+		const vec3 GetScale() { return m_scale; }
 
 	private:
 		vec3 m_position = vec3(0.0f); ///< X, Y, Z location of Entity

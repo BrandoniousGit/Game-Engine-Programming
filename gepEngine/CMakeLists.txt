@@ -73,6 +73,12 @@ add_library(gepEngine
 
 	src/gepEngine/AudioClip.cpp
 	src/gepEngine/AudioClip.h
+
+	src/gepEngine/BoxCollider.cpp
+	src/gepEngine/BoxCollider.h
+
+	src/gepEngine/Rigidbody.cpp
+	src/gepEngine/Rigidbody.h
 )
 
 target_link_libraries(gepEngine

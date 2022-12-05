@@ -20,9 +20,14 @@ namespace gepEngine
 		}
 	}
 
-	std::shared_ptr<Transform> Entity::getTransform()
+	std::shared_ptr<Transform> Entity::GetTransform()
 	{
 		return m_transform.lock();
+	}
+
+	std::shared_ptr<Core> Entity::GetCore()
+	{
+		return std::shared_ptr<Core>();
 	}
 
 	void Entity::Initialize()

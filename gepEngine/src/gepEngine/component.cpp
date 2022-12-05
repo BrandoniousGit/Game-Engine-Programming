@@ -22,7 +22,7 @@ namespace gepEngine
 		OnInitialize();
 	}
 
-	std::shared_ptr<Entity> Component::getEntity() const
+	std::shared_ptr<Entity> Component::GetEntity() const
 	{
 		return m_entity.lock();
 	}
