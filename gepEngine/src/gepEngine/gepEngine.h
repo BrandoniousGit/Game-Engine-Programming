@@ -10,6 +10,8 @@
 #include "AudioSource.h"
 #include "BoxCollider.h"
 #include "Rigidbody.h"
+#include "ModelRenderer.h"
+#include "Resources.h"
 
 #define Shared std::shared_ptr
 

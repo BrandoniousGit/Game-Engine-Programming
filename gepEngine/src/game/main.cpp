@@ -14,7 +14,8 @@ struct Update : Component
 
 	void OnTick()
 	{
-		GetEntity()->GetTransform()->AddPosition(vec3(0.0f, -0.001f, 0.0f));
+		GetEntity()->GetTransform()->AddPosition(vec3(0.0f, -0.005f, 0.0f));
+		GetEntity()->GetTransform()->AddRotation(vec3(0.0f, 5.0f, 0.0f));
 	}
 };
 
@@ -33,9 +34,10 @@ int main()
 	//Entity 1 ====================
 	std::shared_ptr<Entity> e = core->AddEntity();
 	e->AddComponent<Update>();
-	e->AddComponent<TriangleRenderer>();
+	e->AddComponent<ModelRenderer>();
 	e->AddComponent<BoxCollider>();
 	e->AddComponent<Rigidbody>();
+	e->GetTransform()->SetScale(glm::vec3(0.01f));
 
 	//std::shared_ptr<AudioSource> as = e->addComponent<AudioSource>();
 	//as->setAudio(core->getResources()->load<Audio>("audio/horn"));

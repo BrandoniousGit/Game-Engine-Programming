@@ -79,6 +79,12 @@ add_library(gepEngine
 
 	src/gepEngine/Rigidbody.cpp
 	src/gepEngine/Rigidbody.h
+
+	src/gepEngine/Resources.cpp
+	src/gepEngine/Resources.h
+
+	src/gepEngine/ModelRenderer.cpp
+	src/gepEngine/ModelRenderer.h
 )
 
 target_link_libraries(gepEngine

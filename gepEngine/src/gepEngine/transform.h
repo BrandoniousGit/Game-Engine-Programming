@@ -29,6 +29,7 @@ namespace gepEngine
 
 		void AddPosition(const vec3& _position) { m_position += _position; }
 		void AddRotation(const vec3& _rotation) { m_rotation += _rotation; }
+		void AddScale(const vec3& _scale) { m_scale += _scale; }
 
 		//Getters
 		const vec3 GetPosition() { return m_position; }
