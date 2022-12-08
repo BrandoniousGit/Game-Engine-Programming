@@ -15,7 +15,7 @@ namespace gepEngine
 
 	void TriangleRenderer::OnDisplay()
 	{
-		rend::Renderer r(1080, 720);
+		rend::Renderer r(720, 720);
 		mat4 model = m_entity.lock()->GetTransform()->GetModel();
 
 		r.model(model);
