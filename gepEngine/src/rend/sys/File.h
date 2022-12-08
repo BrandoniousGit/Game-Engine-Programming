@@ -105,8 +105,6 @@ private:
 
     m_mode = 0;
 
-    printf("%s\n", m_path.unsafe_raw());
-
 #ifdef _MSC_VER
     if(fopen_s(&m_raw, m_path.unsafe_raw(), "rb"))
     {

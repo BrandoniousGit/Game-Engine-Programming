@@ -48,7 +48,7 @@ int main()
 	e2->AddComponent<BoxCollider>();
 	e2->AddComponent<Rigidbody>();
 
-	core->start();
+	core->Start();
 
 	return 0;
 }

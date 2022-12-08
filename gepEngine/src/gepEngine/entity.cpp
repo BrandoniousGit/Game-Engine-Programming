@@ -6,7 +6,7 @@ namespace gepEngine
 
 	void Entity::Tick() 
 	{
-		for (std::vector<std::shared_ptr<Component>>::iterator it = m_components.begin(); it != m_components.end(); ++it)
+		for (std::list<std::shared_ptr<Component>>::iterator it = m_components.begin(); it != m_components.end(); ++it)
 		{
 			(*it)->Tick();
 		}
@@ -14,7 +14,7 @@ namespace gepEngine
 
 	void Entity::Display() 
 	{
-		for (std::vector<std::shared_ptr<Component>>::iterator it = m_components.begin(); it != m_components.end(); ++it)
+		for (std::list<std::shared_ptr<Component>>::iterator it = m_components.begin(); it != m_components.end(); ++it)
 		{
 			(*it)->Display();
 		}
@@ -27,12 +27,12 @@ namespace gepEngine
 
 	std::shared_ptr<Core> Entity::GetCore()
 	{
-		return std::shared_ptr<Core>();
+		return m_core.lock();
 	}
 
 	void Entity::Initialize()
 	{
-		for (std::vector<std::shared_ptr<Component>>::iterator it = m_components.begin(); it != m_components.end(); ++it)
+		for (std::list<std::shared_ptr<Component>>::iterator it = m_components.begin(); it != m_components.end(); ++it)
 		{
 			(*it)->Initialize();
 		}

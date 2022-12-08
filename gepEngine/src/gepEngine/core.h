@@ -41,13 +41,16 @@ namespace gepEngine
 				}
 			}
 		}
+
+		
+
 	private:
 		ALCcontext *m_audioContext;
 		ALCdevice *m_audioDevice;
 
 		bool m_running; //Flag to keep engine running
 		SDL_Window* m_window;
-		SDL_GLContext m_context;
+		SDL_GLContext m_context; 
 		std::weak_ptr<Core> m_self;
 		std::list<std::shared_ptr<Entity> > m_entities; //List of entities;
 	};

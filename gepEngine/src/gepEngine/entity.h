@@ -46,7 +46,7 @@ namespace gepEngine
 	private:
 		friend struct Core;
 
-		std::vector<std::shared_ptr<Component> > m_components;
+		std::list<std::shared_ptr<Component> > m_components;
 
 		void Initialize();
 		void Tick();
