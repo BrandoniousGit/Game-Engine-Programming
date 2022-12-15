@@ -1,7 +1,7 @@
 #include "RigidBody.h"
 #include "BoxCollider.h"
-#include "entity.h"
-#include "core.h"
+#include "Entity.h"
+#include "Core.h"
 #include <vector>
 #include <memory>
 

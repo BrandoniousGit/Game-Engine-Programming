@@ -1,6 +1,6 @@
-#include "component.h"
+#include "Component.h"
 #include <rend/rend.h>
-#include "glmWrap.h"
+#include "GlmWrap.h"
 
 namespace gepEngine
 {

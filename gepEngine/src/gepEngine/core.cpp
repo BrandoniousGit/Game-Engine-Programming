@@ -1,6 +1,6 @@
-#include "core.h"
-#include "entity.h"
-#include "transform.h"
+#include "Core.h"
+#include "Entity.h"
+#include "Transform.h"
 
 #include <stdexcept>
 

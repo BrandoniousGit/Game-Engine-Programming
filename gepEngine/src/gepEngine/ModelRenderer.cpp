@@ -1,15 +1,15 @@
 #include "ModelRenderer.h"
 #include <iostream>
-#include "glmWrap.h"
-#include "entity.h"
-#include "transform.h"
+#include "GlmWrap.h"
+#include "Entity.h"
+#include "Transform.h"
 
 
 namespace gepEngine
 {
 	ModelRenderer::ModelRenderer() :
 		m_shader("../resources/shaders/basic.vert", "../resources/shaders/basic.frag"),
-		m_texture("../resources/textures/Flopp.jpeg")
+		m_texture("../resources/textures/Maxwell_Diffuse.bmp")
 	{
 		m_mesh.loadTriangle();
 		m_model = new rend::Model("../resources/models/Maxwell.obj");

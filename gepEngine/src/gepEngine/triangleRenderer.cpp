@@ -1,8 +1,8 @@
-#include "triangleRenderer.h"
+#include "TriangleRenderer.h"
 #include <iostream>
-#include "glmWrap.h"
-#include "entity.h"
-#include "transform.h"
+#include "GlmWrap.h"
+#include "Entity.h"
+#include "Transform.h"
 
 namespace gepEngine
 {

@@ -49,24 +49,24 @@ add_library(rend
 target_link_libraries(rend ${LIBGLEW} ${LIBOPENGL})
 
 add_library(gepEngine
-	src/gepEngine/core.cpp
-	src/gepEngine/core.h
+	src/gepEngine/Core.cpp
+	src/gepEngine/Core.h
 
-	src/gepEngine/gepEngine.h
+	src/gepEngine/GepEngine.h
 
-	src/gepEngine/entity.h
-	src/gepEngine/entity.cpp
+	src/gepEngine/Entity.h
+	src/gepEngine/Entity.cpp
 
-	src/gepEngine/component.h
-	src/gepEngine/component.cpp
+	src/gepEngine/Component.h
+	src/gepEngine/Component.cpp
 
-	src/gepEngine/transform.cpp
-	src/gepEngine/transform.h
+	src/gepEngine/Transform.cpp
+	src/gepEngine/Transform.h
 
-	src/gepEngine/triangleRenderer.h
-	src/gepEngine/triangleRenderer.cpp
+	src/gepEngine/TriangleRenderer.h
+	src/gepEngine/TriangleRenderer.cpp
 
-	src/gepEngine/glmWrap.h
+	src/gepEngine/GlmWrap.h
 
 	src/gepEngine/AudioSource.cpp
 	src/gepEngine/AudioSource.h

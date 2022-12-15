@@ -1,6 +1,6 @@
 #include "BoxCollider.h"
-#include "transform.h"
-#include "entity.h"
+#include "Transform.h"
+#include "Entity.h"
 
 namespace gepEngine
 {

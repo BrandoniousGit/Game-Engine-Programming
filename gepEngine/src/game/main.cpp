@@ -3,8 +3,6 @@
 
 using namespace gepEngine;
 
-void load_ogg(const std::string&, std::vector<unsigned char>&, ALenum&, ALsizei&);
-
 struct Update : Component
 {
 	void OnInitialize()

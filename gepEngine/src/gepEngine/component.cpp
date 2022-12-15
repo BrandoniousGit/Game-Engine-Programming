@@ -1,5 +1,5 @@
-#include "component.h"
-#include "entity.h"
+#include "Component.h"
+#include "Entity.h"
 
 namespace gepEngine
 {

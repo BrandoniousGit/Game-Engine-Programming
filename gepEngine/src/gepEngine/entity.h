@@ -1,7 +1,7 @@
 #include <vector>
 #include <memory>
 #include <list>
-#include "glmWrap.h"
+#include "GlmWrap.h"
 
 namespace gepEngine
 {

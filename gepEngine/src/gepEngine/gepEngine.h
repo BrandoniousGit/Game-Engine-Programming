@@ -1,11 +1,11 @@
 #ifndef GEPENGINE_GEPENGINE_H
 #define GEPENGINE_GEPENGINE_H
 
-#include "core.h"
-#include "entity.h"
-#include "component.h"
-#include "triangleRenderer.h"
-#include "transform.h"
+#include "Core.h"
+#include "Entity.h"
+#include "Component.h"
+#include "TriangleRenderer.h"
+#include "Transform.h"
 #include "AudioClip.h"
 #include "AudioSource.h"
 #include "BoxCollider.h"

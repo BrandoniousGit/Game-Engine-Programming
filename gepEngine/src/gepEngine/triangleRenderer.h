@@ -2,7 +2,7 @@
 #define GEPENGINE_TRIANGLERENDERER_H
 
 
-#include "component.h"
+#include "Component.h"
 #include <rend/rend.h>
 
 namespace gepEngine

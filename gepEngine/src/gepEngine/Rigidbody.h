@@ -2,7 +2,7 @@
 #define GEPENGINE_RIGIDBODY_H
 
 #include <iostream>
-#include "component.h"
+#include "Component.h"
 
 namespace gepEngine
 {

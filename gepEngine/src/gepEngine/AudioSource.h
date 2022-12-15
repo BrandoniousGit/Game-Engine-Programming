@@ -1,13 +1,13 @@
 #ifndef GEPENGINE_AUDIOSOURCE_H
 #define GEPENGINE_AUDIOSOURCE_H
 
-#include "component.h"
+#include "Component.h"
 #include "AudioClip.h"
 #include <string>
 #include <vector>
 #include <AL/al.h>
 #include <AL/alc.h>
-#include "glmWrap.h"
+#include "GlmWrap.h"
 
 namespace gepEngine
 {

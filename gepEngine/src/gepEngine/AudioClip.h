@@ -26,5 +26,4 @@ namespace gepEngine
 		ALuint m_bufferId; //< Stored buffer Id
 	};
 }
-
 #endif

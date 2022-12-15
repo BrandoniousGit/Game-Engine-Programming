@@ -1,7 +1,7 @@
 #ifndef GEPENGINE_MODELRENDERER_H
 #define GEPENGINE_MODELRENDERER_H
 
-#include "component.h"
+#include "Component.h"
 #include <rend/rend.h>
 
 namespace gepEngine

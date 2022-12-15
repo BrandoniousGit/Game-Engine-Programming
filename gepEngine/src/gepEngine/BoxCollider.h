@@ -2,8 +2,8 @@
 #define GEPENGINE_BOXCOLLIDER_H
 
 #include <iostream>
-#include "component.h"
-#include "glmWrap.h"
+#include "Component.h"
+#include "GlmWrap.h"
 
 namespace gepEngine
 {
