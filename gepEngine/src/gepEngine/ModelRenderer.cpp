@@ -22,13 +22,14 @@ namespace gepEngine
 		((rend::Renderer*)(&r))->model(model);
 		//((rend::ModelRenderer*)(&r))->model(m_model);
 
-		r.model(m_model);
-		r.texture(&m_texture);
 		r.shader(&m_shader);
-		//r.mesh(&m_mesh);
+		r.model(m_model);
 		r.depthTest(true);
 		r.backfaceCull(true);
-		r.blend(true);
+		//r.blend(true);
+		r.projection(rend::perspective(45.0f, 1.0f, 0.01f, 100.0f));
+		r.texture(&m_texture);
+		//r.mesh(&m_mesh);
 		r.render();
 	}
 }

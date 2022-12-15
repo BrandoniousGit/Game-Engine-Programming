@@ -6,7 +6,6 @@
 
 namespace gepEngine
 {
-	//yes
 	TriangleRenderer::TriangleRenderer() :
 		m_shader("../resources/shaders/basic.vert", "../resources/shaders/basic.frag")
 		{

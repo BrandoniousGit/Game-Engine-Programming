@@ -2,7 +2,6 @@
 #include <string>
 #include <vector>
 #include <stdexcept>
-#include "stb_vorbis.h"
 
 #include <AL/al.h>
 #include <AL/alc.h>
@@ -23,13 +22,13 @@ namespace gepEngine
 
 	}
 
-	void AudioSource::PlaySound(AudioClip clip, ALfloat _volume)
+	void AudioSource::PlaySound(std::shared_ptr<AudioClip> clip, ALfloat _volume)
 	{
 		//alSource3f(sourceId, AL_POSITION, 0.0f, 0.0f, 0.0f);
 		alSourcef(m_sourceId, AL_PITCH, 2);
 		alSourcef(m_sourceId, AL_GAIN, _volume);
 
-		alSourcei(m_sourceId, AL_BUFFER, clip.GetBufferId());
+		alSourcei(m_sourceId, AL_BUFFER, clip->GetBufferId());
 		alSourcePlay(m_sourceId);
 	}
 }

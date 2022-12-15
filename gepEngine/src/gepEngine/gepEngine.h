@@ -11,8 +11,10 @@
 #include "BoxCollider.h"
 #include "Rigidbody.h"
 #include "ModelRenderer.h"
-#include "Resources.h"
+#include "Cache.h"
 #include "Input.h"
+#include "Texture.h"
+#include "Model.h"
 
 #define Shared std::shared_ptr
 

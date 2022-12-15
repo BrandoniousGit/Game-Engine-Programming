@@ -80,14 +80,32 @@ add_library(gepEngine
 	src/gepEngine/Rigidbody.cpp
 	src/gepEngine/Rigidbody.h
 
-	src/gepEngine/Resources.cpp
-	src/gepEngine/Resources.h
+	src/gepEngine/Resource.cpp
+	src/gepEngine/Resource.h
 
 	src/gepEngine/ModelRenderer.cpp
 	src/gepEngine/ModelRenderer.h
 
 	src/gepEngine/Input.cpp
 	src/gepEngine/Input.h
+
+	src/gepEngine/Model.cpp
+	src/gepEngine/Model.h
+
+	src/gepEngine/Shader.cpp
+	src/gepEngine/Shader.h
+
+	src/gepEngine/Resource.cpp
+	src/gepEngine/Resource.h
+
+	src/gepEngine/Texture.cpp
+	src/gepEngine/Texture.h
+
+	src/gepEngine/Cache.cpp
+	src/gepEngine/Cache.h
+
+	src/gepEngine/Camera.cpp
+	src/gepEngine/Camera.h
 )
 
 target_link_libraries(gepEngine

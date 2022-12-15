@@ -3,22 +3,6 @@
 
 namespace gepEngine
 {
-	AudioClip::AudioClip()
-	{
-		m_format = 0;
-		m_freq = 0;
-
-		std::vector<unsigned char> bufferData;
-		load_ogg("../resources/dixie_horn.ogg", bufferData, m_format, m_freq);
-
-		m_bufferId = 0;
-		alGenBuffers(1, &m_bufferId);
-
-		alBufferData(m_bufferId, m_format, &bufferData.at(0), static_cast<ALsizei>(bufferData.size()), m_freq);
-
-
-	}
-
 	void AudioClip::load_ogg(const std::string& _path, std::vector<unsigned char>& _buffer, ALenum& _format, ALsizei& _freq)
 	{
 		int channels = 0;
@@ -52,5 +36,19 @@ namespace gepEngine
 
 		// Clean up the read data
 		free(output);
+	}
+
+	void AudioClip::OnLoad()
+	{
+		m_format = 0;
+		m_freq = 0;
+
+		std::vector<unsigned char> bufferData;
+		load_ogg(GetPath(), bufferData, m_format, m_freq);
+
+		m_bufferId = 0;
+		alGenBuffers(1, &m_bufferId);
+
+		alBufferData(m_bufferId, m_format, &bufferData.at(0), static_cast<ALsizei>(bufferData.size()), m_freq);
 	}
 }

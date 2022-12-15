@@ -1,6 +1,7 @@
 #include "Core.h"
 #include "Entity.h"
 #include "Transform.h"
+#include "Cache.h"
 
 #include <stdexcept>
 
@@ -61,6 +62,10 @@ namespace gepEngine
 		alListener3f(AL_POSITION, 0.0f, 0.0f, 0.0f);
 		//alListener3f(AL_VELOCITY, 0.0f, 0.0f, 0.0f);
 
+		rtn->m_cache = std::make_shared<Cache>();
+
+		//rtn->m_userInput = std::make_shared<Input>();
+
 		return rtn;
 	}
 
@@ -98,12 +103,13 @@ namespace gepEngine
 					m_running = false;
 				}
 			}
-			rend::Renderer r(720, 720);
+			
 			for (auto it = m_entities.begin(); it != m_entities.end(); it++)
 			{
 				(*it)->Tick();
 			}
 
+			rend::Renderer r(720, 720);
 			r.clear();
 
 			for (auto it = m_entities.begin(); it != m_entities.end(); it++)
@@ -118,4 +124,14 @@ namespace gepEngine
 	{
 		m_running = false;
 	}
+
+	std::shared_ptr<Cache> Core::GetCache()
+	{
+		return m_cache;
+	}
+
+	/*std::shared_ptr<Input> Core::GetInput()
+	{
+		return m_userInput;
+	}*/
 }

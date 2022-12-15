@@ -12,6 +12,9 @@
 namespace gepEngine
 {
 	struct Entity;
+	struct Cache;
+	//struct Input;
+
 	struct Core
 	{
 		static std::shared_ptr<Core> Initialize();
@@ -42,11 +45,15 @@ namespace gepEngine
 			}
 		}
 
-		
+		std::shared_ptr<Cache> GetCache();
+		//std::shared_ptr<Input> GetInput();
 
 	private:
 		ALCcontext *m_audioContext;
 		ALCdevice *m_audioDevice;
+
+		std::shared_ptr<Cache> m_cache;
+		//std::shared_ptr<Input> m_userInput;
 
 		bool m_running; //Flag to keep engine running
 		SDL_Window* m_window;
