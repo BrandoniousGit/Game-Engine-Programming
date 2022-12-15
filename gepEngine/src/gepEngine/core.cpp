@@ -20,7 +20,7 @@ namespace gepEngine
 
 		if (!(rtn->m_window = SDL_CreateWindow("SDL2 Platform",
 			SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
-			1080, 720, SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL)))
+			720, 720, SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL)))
 		{
 			SDL_Quit();
 			throw std::runtime_error("Failed to create window");
@@ -98,12 +98,14 @@ namespace gepEngine
 					m_running = false;
 				}
 			}
-			rend::Renderer r(1080, 720);
+			rend::Renderer r(720, 720);
 			for (auto it = m_entities.begin(); it != m_entities.end(); it++)
 			{
 				(*it)->Tick();
 			}
+
 			r.clear();
+
 			for (auto it = m_entities.begin(); it != m_entities.end(); it++)
 			{
 				(*it)->Display();

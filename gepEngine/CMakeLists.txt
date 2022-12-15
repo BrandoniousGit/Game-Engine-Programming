@@ -85,6 +85,9 @@ add_library(gepEngine
 
 	src/gepEngine/ModelRenderer.cpp
 	src/gepEngine/ModelRenderer.h
+
+	src/gepEngine/Input.cpp
+	src/gepEngine/Input.h
 )
 
 target_link_libraries(gepEngine

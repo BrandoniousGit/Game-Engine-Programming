@@ -12,6 +12,7 @@
 #include "Rigidbody.h"
 #include "ModelRenderer.h"
 #include "Resources.h"
+#include "Input.h"
 
 #define Shared std::shared_ptr
 
