@@ -3,6 +3,7 @@
 #include "GlmWrap.h"
 #include "Entity.h"
 #include "Transform.h"
+#include "Camera.h"
 
 
 namespace gepEngine
@@ -27,7 +28,8 @@ namespace gepEngine
 		r.depthTest(true);
 		r.backfaceCull(true);
 		//r.blend(true);
-		r.projection(rend::perspective(45.0f, 1.0f, 0.01f, 100.0f));
+		r.projection(Camera::GetMainCam()->GetProjection());
+		r.view(Camera::GetMainCam()->GetView());
 		r.texture(&m_texture);
 		//r.mesh(&m_mesh);
 		r.render();

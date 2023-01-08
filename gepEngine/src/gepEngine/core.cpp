@@ -2,6 +2,7 @@
 #include "Entity.h"
 #include "Transform.h"
 #include "Cache.h"
+#include "Input.h"
 
 #include <stdexcept>
 
@@ -98,9 +99,28 @@ namespace gepEngine
 			SDL_Event event = { 0 };
 			while (SDL_PollEvent(&event))
 			{
-				if (event.type == SDL_QUIT)
+				//int button;
+				switch (event.type)
 				{
+				case SDL_QUIT:
 					m_running = false;
+					break;
+
+				case SDL_KEYDOWN:
+					if (!m_input->GetKey(event.key.keysym.sym))
+					{
+						m_input->keyDown.push_back(event.key.keysym.sym);
+						m_input->keys.push_back(event.key.keysym.sym);
+					}
+					break;
+
+				case SDL_KEYUP:
+					if (m_input->GetKey(event.key.keysym.sym))
+					{
+						m_input->keys.remove(event.key.keysym.sym);
+						m_input->keyUp.push_back(event.key.keysym.sym);
+					}
+					break;
 				}
 			}
 			
@@ -130,8 +150,8 @@ namespace gepEngine
 		return m_cache;
 	}
 
-	/*std::shared_ptr<Input> Core::GetInput()
+	std::shared_ptr<Input> Core::GetInput()
 	{
-		return m_userInput;
-	}*/
+		return m_input;
+	}
 }

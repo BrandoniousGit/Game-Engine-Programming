@@ -3,6 +3,7 @@
 #include "GlmWrap.h"
 #include "Entity.h"
 #include "Transform.h"
+#include "Camera.h"
 
 namespace gepEngine
 {
@@ -20,6 +21,8 @@ namespace gepEngine
 		r.model(model);
 		r.shader(&m_shader);
 		r.mesh(&m_mesh);
+		r.projection(Camera::GetMainCam()->GetProjection());
+		r.view(Camera::GetMainCam()->GetView());
 		r.render();
 	}
 }
