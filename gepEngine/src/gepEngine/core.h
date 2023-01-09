@@ -2,6 +2,7 @@
 #include <memory>
 #include <list>
 #include <vector>
+#include <string>
                                                               
 #include <AL/al.h>
 #include <AL/alc.h>
@@ -53,9 +54,8 @@ namespace gepEngine
 		ALCdevice *m_audioDevice;
 
 		std::shared_ptr<Cache> m_cache;
-		//std::shared_ptr<Input> m_userInput;
-
 		std::shared_ptr<Input> m_input;
+
 		bool m_running; //Flag to keep engine running
 		SDL_Window* m_window;
 		SDL_GLContext m_context; 

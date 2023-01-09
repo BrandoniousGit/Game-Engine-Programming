@@ -12,6 +12,9 @@ namespace gepEngine
 		bool GetKey(SDL_Keycode code);
 		bool GetKeyDown(SDL_Keycode code);
 		bool GetKeyUp(SDL_Keycode code);
+		bool GetButton(int button);
+		bool GetButtonDown(int button);
+		bool GetButtonUp(int button);
 
 	private:
 		friend struct Core;
@@ -19,6 +22,9 @@ namespace gepEngine
 		static std::list<SDL_Keycode> keys;
 		static std::list<SDL_Keycode> keyDown;
 		static std::list<SDL_Keycode> keyUp;
+		static std::list<int> Input::buttons;
+		static std::list<int> Input::buttonDown;
+		static std::list<int> Input::buttonUp;
 	};
 
 	struct Keys

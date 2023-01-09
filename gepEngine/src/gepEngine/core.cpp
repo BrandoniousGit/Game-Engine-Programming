@@ -8,7 +8,6 @@
 
 namespace gepEngine
 {
-
 	std::shared_ptr<Core> Core::Initialize() //Engine core
 	{
 		std::shared_ptr<Core> rtn = std::make_shared<Core>();
@@ -65,8 +64,6 @@ namespace gepEngine
 
 		rtn->m_cache = std::make_shared<Cache>();
 
-		//rtn->m_userInput = std::make_shared<Input>();
-
 		return rtn;
 	}
 
@@ -99,7 +96,7 @@ namespace gepEngine
 			SDL_Event event = { 0 };
 			while (SDL_PollEvent(&event))
 			{
-				//int button;
+				int button;
 				switch (event.type)
 				{
 				case SDL_QUIT:
@@ -120,6 +117,20 @@ namespace gepEngine
 						m_input->keys.remove(event.key.keysym.sym);
 						m_input->keyUp.push_back(event.key.keysym.sym);
 					}
+					break;
+				case SDL_MOUSEBUTTONDOWN:
+
+					button = (int)event.button.button;
+					m_input->buttons.push_back(button);
+					m_input->buttonDown.push_back(button);
+
+					break;
+				case SDL_MOUSEBUTTONUP:
+
+					button = (int)event.button.button;
+					m_input->buttons.remove(button);
+					m_input->buttonUp.push_back(button);
+
 					break;
 				}
 			}

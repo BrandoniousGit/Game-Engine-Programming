@@ -11,6 +11,8 @@ namespace gepEngine
 {
 	struct Model : Resource
 	{
+		static void load_model(const std::string& _path);
+
 		void OnLoad();
 
 	private:
