@@ -83,14 +83,11 @@ add_library(gepEngine
 	src/gepEngine/Resource.cpp
 	src/gepEngine/Resource.h
 
-	src/gepEngine/ModelRenderer.cpp
-	src/gepEngine/ModelRenderer.h
+	src/gepEngine/MeshRenderer.cpp
+	src/gepEngine/MeshRenderer.h
 
 	src/gepEngine/Input.cpp
 	src/gepEngine/Input.h
-
-	src/gepEngine/Model.cpp
-	src/gepEngine/Model.h
 
 	src/gepEngine/Shader.cpp
 	src/gepEngine/Shader.h
@@ -98,14 +95,20 @@ add_library(gepEngine
 	src/gepEngine/Resource.cpp
 	src/gepEngine/Resource.h
 
-	src/gepEngine/Texture.cpp
-	src/gepEngine/Texture.h
-
 	src/gepEngine/Cache.cpp
 	src/gepEngine/Cache.h
 
 	src/gepEngine/Camera.cpp
 	src/gepEngine/Camera.h
+
+	src/gepEngine/Time.cpp
+	src/gepEngine/Time.h
+
+	src/gepEngine/Models.cpp
+	src/gepEngine/Models.h
+
+	src/gepEngine/Textures.cpp
+	src/gepEngine/Textures.h
 )
 
 target_link_libraries(gepEngine

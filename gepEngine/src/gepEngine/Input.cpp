@@ -8,6 +8,7 @@ namespace gepEngine
 	std::list<int> Input::buttons = {};
 	std::list<int> Input::buttonDown = {};
 	std::list<int> Input::buttonUp = {};
+	vec3 Input::mousePos = vec3(0.0f,0.0f,0.0f);
 
 	bool Input::GetKeyDown(SDL_Keycode code)
 	{

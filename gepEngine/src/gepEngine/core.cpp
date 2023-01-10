@@ -3,6 +3,7 @@
 #include "Transform.h"
 #include "Cache.h"
 #include "Input.h"
+#include "Time.h"
 
 #include <stdexcept>
 
@@ -89,11 +90,19 @@ namespace gepEngine
 			(*it)->Initialize();
 		}
 
+		float idealTime = 1.0f / 60.0f;
+
 		//Loop
 
 		while (m_running)
 		{
 			SDL_Event event = { 0 };
+
+			if (idealTime > Time::DeltaTime())
+			{
+				SDL_Delay(idealTime - Time::DeltaTime() * 1000.0f);
+			}
+
 			while (SDL_PollEvent(&event))
 			{
 				int button;

@@ -10,12 +10,13 @@
 #include "AudioSource.h"
 #include "BoxCollider.h"
 #include "Rigidbody.h"
-#include "ModelRenderer.h"
+#include "MeshRenderer.h"
 #include "Cache.h"
 #include "Input.h"
-#include "Texture.h"
-#include "Model.h"
 #include "Camera.h"
+#include "Time.h"
+#include "Textures.h"
+#include "Models.h"
 
 #define Shared std::shared_ptr
 

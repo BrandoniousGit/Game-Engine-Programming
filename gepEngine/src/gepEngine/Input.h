@@ -4,6 +4,7 @@
 #include <SDL2/SDL.h>
 #include <iostream>
 #include <list>
+#include "glmWrap.h"
 
 namespace gepEngine
 {
@@ -15,6 +16,7 @@ namespace gepEngine
 		bool GetButton(int button);
 		bool GetButtonDown(int button);
 		bool GetButtonUp(int button);
+		vec3 GetMousePos() { return vec3(mousePos.x, mousePos.y, 0.0f); }
 
 	private:
 		friend struct Core;
@@ -25,6 +27,7 @@ namespace gepEngine
 		static std::list<int> Input::buttons;
 		static std::list<int> Input::buttonDown;
 		static std::list<int> Input::buttonUp;
+		static vec3 Input::mousePos;
 	};
 
 	struct Keys

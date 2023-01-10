@@ -34,6 +34,8 @@ struct Model : sys::EnablePtr
   sys::List<Part>::Iterator partsBegin();
   sys::List<Part>::Iterator partsEnd();
 
+  void setModel(const sys::String& _path);
+
   bool intersect(const Ray& _ray) const;
   sys::Ptr<Part> intersect(const Ray& _ray, float& _distance) const;
   void color(vec4 _color);
