@@ -19,7 +19,7 @@ namespace gepEngine
 	struct Core
 	{
 		static std::shared_ptr<Core> Initialize();
-		std::shared_ptr<Entity> AddEntity();
+		std::shared_ptr<Entity> AddEntity(std::string _name);
 
 		void Start();
 		void Stop();
@@ -48,6 +48,7 @@ namespace gepEngine
 
 		std::shared_ptr<Cache> GetCache();
 	    std::shared_ptr<Input> GetInput();
+		std::shared_ptr<Entity> GetEntityByName(std::string _name);
 
 	private:
 		ALCcontext *m_audioContext;

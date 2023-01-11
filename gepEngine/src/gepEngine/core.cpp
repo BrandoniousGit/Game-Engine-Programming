@@ -64,15 +64,17 @@ namespace gepEngine
 		//alListener3f(AL_VELOCITY, 0.0f, 0.0f, 0.0f);
 
 		rtn->m_cache = std::make_shared<Cache>();
+		rtn->m_input = std::make_shared<Input>();
 
 		return rtn;
 	}
 
-	std::shared_ptr<Entity> Core::AddEntity() //Function to add entity to scene
+	std::shared_ptr<Entity> Core::AddEntity(std::string _name) //Function to add entity to scene
 	{
 		std::shared_ptr<Entity> rtn = std::make_shared<Entity>();
 
 		rtn->m_transform = rtn->AddComponent<Transform>();
+		rtn->m_name = _name;
 
 		rtn->m_self = rtn;
 		rtn->m_core = m_self;
@@ -173,5 +175,17 @@ namespace gepEngine
 	std::shared_ptr<Input> Core::GetInput()
 	{
 		return m_input;
+	}
+
+	std::shared_ptr<Entity> Core::GetEntityByName(std::string _name)
+	{
+		for (auto const it : Core::m_entities)
+		{
+			if (it->GetName() == _name)
+			{
+				return it;
+			}
+		}
+		return NULL;
 	}
 }

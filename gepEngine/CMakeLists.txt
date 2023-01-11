@@ -111,6 +111,15 @@ add_library(gepEngine
 	src/gepEngine/Textures.h
 )
 
+add_library(scripts
+	src/scripts/Scripts.h
+
+	src/scripts/PlayerScript.cpp
+	src/scripts/EnemyScript.cpp
+	src/scripts/FloorScript.cpp
+	src/scripts/EnemyScript.cpp
+)
+
 target_link_libraries(gepEngine
 	SDL2
 	rend

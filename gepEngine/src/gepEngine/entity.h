@@ -1,6 +1,7 @@
 #include <vector>
 #include <memory>
 #include <list>
+#include <string>
 #include "GlmWrap.h"
 
 namespace gepEngine
@@ -42,6 +43,7 @@ namespace gepEngine
 
 		std::shared_ptr<Transform> GetTransform();
 		std::shared_ptr<Core> GetCore();
+		std::string GetName();
 
 	private:
 		friend struct Core;
@@ -52,6 +54,7 @@ namespace gepEngine
 		void Tick();
 		void Display();
 
+		std::string m_name;
 		std::weak_ptr<Transform> m_transform;
 		std::weak_ptr<Entity> m_self;
 		std::weak_ptr<Core> m_core;

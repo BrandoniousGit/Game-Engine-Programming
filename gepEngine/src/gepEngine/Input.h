@@ -24,10 +24,10 @@ namespace gepEngine
 		static std::list<SDL_Keycode> keys;
 		static std::list<SDL_Keycode> keyDown;
 		static std::list<SDL_Keycode> keyUp;
-		static std::list<int> Input::buttons;
-		static std::list<int> Input::buttonDown;
-		static std::list<int> Input::buttonUp;
-		static vec3 Input::mousePos;
+		static std::list<int> buttons;
+		static std::list<int> buttonDown;
+		static std::list<int> buttonUp;
+		static vec3 mousePos;
 	};
 
 	struct Keys

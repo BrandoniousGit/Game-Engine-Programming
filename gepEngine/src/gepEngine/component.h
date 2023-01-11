@@ -16,7 +16,6 @@ namespace gepEngine
 
 		virtual void OnTick();
 		virtual void OnDisplay();
-
 		virtual void OnInitialize();
 
 		void Tick();
@@ -28,5 +27,4 @@ namespace gepEngine
 		std::weak_ptr<Entity> m_entity;
 	};
 }
-
 #endif
