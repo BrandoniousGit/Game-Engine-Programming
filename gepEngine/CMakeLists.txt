@@ -117,7 +117,7 @@ add_library(scripts
 	src/scripts/PlayerScript.cpp
 	src/scripts/EnemyScript.cpp
 	src/scripts/FloorScript.cpp
-	src/scripts/EnemyScript.cpp
+	src/scripts/CameraScript.cpp
 )
 
 target_link_libraries(gepEngine
