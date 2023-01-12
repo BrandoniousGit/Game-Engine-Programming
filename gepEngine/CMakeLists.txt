@@ -118,6 +118,11 @@ add_library(scripts
 	src/scripts/EnemyScript.cpp
 	src/scripts/FloorScript.cpp
 	src/scripts/CameraScript.cpp
+
+	src/scripts/PlayerScript.h
+	src/scripts/EnemyScript.h
+	src/scripts/FloorScript.h
+	src/scripts/CameraScript.h
 )
 
 target_link_libraries(gepEngine
@@ -130,4 +135,4 @@ add_executable(game
 	src/game/main.cpp
 )
 
-target_link_libraries(game gepEngine)
+target_link_libraries(game gepEngine scripts)

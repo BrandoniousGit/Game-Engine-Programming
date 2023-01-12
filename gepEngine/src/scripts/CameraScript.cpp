@@ -1,44 +1,47 @@
-#include <gepEngine/gepEngine.h>
-#include <iostream>
+#include <scripts/Scripts.h>
 
-#define entity GetEntity()
-#define transform GetEntity()->GetTransform()
-#define input GetEntity()->GetCore()->GetInput()
-#define getCore GetEntity()->GetCore()
-
-using namespace gepEngine;
-
-struct CameraScript : Component
+void CameraScript::OnInitialize()
 {
-	std::shared_ptr<Entity> player;
-	vec3 offset;
+	//transform->SetRotation(vec3(-90, 0, 0));
+	offset = vec3(0, 5, 0);
+	player = getCore->GetEntityByName("Maxwell");
+	ySens = 0.6f;
+	xSens = 0.4f;
+}
 
-	void OnInitialize()
+void CameraScript::OnTick()
+{
+	playerTransform = player->GetTransform()->GetPosition();
+	transform->SetPosition(vec3(playerTransform + offset));
+	if (input->mouseMotion)
 	{
-		//transform->SetRotation(vec3(-90, 0, 0));
-		//transform->SetPosition(vec3(0, 0, 30));
-		offset = vec3(0, 0, 5.0f);
-		player = getCore->GetEntityByName("Maxwell");
+		input->mouseMotion = false;
+		transform->AddRotation(vec3(-input->GetMousePos().y * ySens, -input->GetMousePos().x * xSens, 0));
 	}
 
-	void OnTick()
+	if (transform->GetRotation().x >= 80)
 	{
-		transform->SetPosition(vec3(player->GetTransform()->GetPosition()) + offset);
-		/*if (input->GetKey(Keys::W))
-		{
-			transform->AddPosition(vec3(0.0f, 0.2f, 0.0f));
-		}
-		if (input->GetKey(Keys::S))
-		{
-			transform->AddPosition(vec3(0.0f, -0.2f, 0.0f));
-		}
-		if (input->GetKey(Keys::A))
-		{
-			transform->AddPosition(vec3(-0.2f, 0.0f, 0.0f));
-		}
-		if (input->GetKey(Keys::D))
-		{
-			transform->AddPosition(vec3(0.2f, 0.0f, 0.0f));
-		}*/
+		transform->SetRotation(vec3(80, transform->GetRotation().y, transform->GetRotation().z));
 	}
-};
+	if (transform->GetRotation().x <= 0)
+	{
+		transform->SetRotation(vec3(0, transform->GetRotation().y, transform->GetRotation().z));
+	}
+
+	if (input->GetKey(Keys::W))
+	{
+		transform->SetPosition(vec3(-0.2f, 0.0f, 0.0f));
+	}
+	if (input->GetKey(Keys::S))
+	{
+		transform->SetPosition(vec3(0.2f, 0.0f, 0.0f));
+	}
+	if (input->GetKey(Keys::A))
+	{
+		transform->SetPosition(vec3(-0.2f, 0.0f, 0.0f));
+	}
+	if (input->GetKey(Keys::D))
+	{
+		transform->SetPosition(vec3(0.2f, 0.0f, 0.0f));
+	}
+}

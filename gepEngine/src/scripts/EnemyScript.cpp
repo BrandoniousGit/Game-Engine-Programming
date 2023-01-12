@@ -1,28 +1,16 @@
-#include <gepEngine/gepEngine.h>
-#include <iostream>
+#include <scripts/Scripts.h>
 
-#define entity GetEntity()
-#define transform GetEntity()->GetTransform()
-#define input GetEntity()->GetCore()->GetInput()
-#define getCore GetEntity()->GetCore()
 
-using namespace gepEngine;
-
-struct EnemyScript : Component
+void EnemyScript::OnInitialize()
 {
-	std::shared_ptr<Entity> player;
-	void OnInitialize()
-	{
-		transform->SetPosition(vec3(0.0f, 0.3f, -3.0f));
-		transform->SetScale(vec3(0.1f, 0.1f, 0.1f));
-		player = getCore->GetEntityByName("Maxwell");
-	}
+	transform->SetPosition(vec3(0.0f, 0.3f, -3.0f));
+	transform->SetScale(vec3(0.1f, 0.1f, 0.1f));
+}
 
-	void OnTick()
+void EnemyScript::OnTick()
+{
+	if (input->GetKey(Keys::X))
 	{
-		if (input->GetKey(Keys::X))
-		{
 			
-		}
 	}
-};
+}

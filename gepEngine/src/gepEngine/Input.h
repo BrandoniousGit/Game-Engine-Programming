@@ -52,6 +52,8 @@ namespace gepEngine
 		*/
 		vec3 GetMousePos() { return vec3(mousePos.x, mousePos.y, 0.0f); }
 
+		bool mouseMotion;
+
 	private:
 		friend struct Core;
 

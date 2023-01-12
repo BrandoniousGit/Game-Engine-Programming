@@ -5,13 +5,13 @@
 #define coreLoad core->GetCache()->load
 
 using namespace gepEngine;
-using system.collections;
 
 int main()
 {
 	std::shared_ptr<Core> core = Core::Initialize();
 
-	std::shared_ptr<AudioClip> funkyTown = coreLoad<AudioClip>("../resources/sounds/catloop.ogg");
+	std::shared_ptr<AudioClip> funkyTown = coreLoad<AudioClip>("../resources/sounds/funkytown.ogg");
+	std::shared_ptr<AudioClip> catloop = coreLoad<AudioClip>("../resources/sounds/catloop.ogg");
 
 	std::shared_ptr<Models> maxwellModel = coreLoad<Models>("../resources/models/Maxwell.obj");
 	std::shared_ptr<Models> floorModel = coreLoad<Models>("../resources/models/Floor.obj");
@@ -37,7 +37,7 @@ int main()
 	maxwell->AddComponent<Rigidbody>();
 
 	maxwell->AddComponent<AudioSource>();
-	maxwell->GetComponent<AudioSource>()->PlaySound(funkyTown, 1.0f);
+	//maxwell->GetComponent<AudioSource>()->PlaySound(catloop, 1.0f);
 
 	//Evil Maxwell ====================
 	std::shared_ptr<Entity> eMaxwell = core->AddEntity("Evil Maxwell");

@@ -94,6 +94,10 @@ namespace gepEngine
 
 		float idealTime = 1.0f / 60.0f;
 
+		bool Mousefirst = true;
+		m_input->mouseMotion = false;
+		SDL_SetRelativeMouseMode(SDL_TRUE);
+
 		//Loop
 
 		while (m_running)
@@ -141,6 +145,22 @@ namespace gepEngine
 					button = (int)event.button.button;
 					m_input->buttons.remove(button);
 					m_input->buttonUp.push_back(button);
+
+					break;
+				case SDL_MOUSEMOTION:
+
+					m_input->mouseMotion = true;
+					if (!Mousefirst)
+					{
+						m_input->mousePos.x = event.motion.xrel;
+						m_input->mousePos.y = event.motion.yrel;
+					}
+					else
+					{
+						Mousefirst = false;
+						m_input->mousePos.x = 0;
+						m_input->mousePos.y = 0;
+					}
 
 					break;
 				}
