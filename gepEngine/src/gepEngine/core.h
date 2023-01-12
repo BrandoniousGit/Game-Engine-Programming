@@ -18,13 +18,33 @@ namespace gepEngine
 
 	struct Core
 	{
+		/**
+		 * @brief Initializes the core
+		 * @return shared_ptr<Core>
+		*/
 		static std::shared_ptr<Core> Initialize();
+		/**
+		 * @brief Adds an entity to the scene
+		 * @param _name 
+		 * @return shared_ptr<Entity>
+		*/
 		std::shared_ptr<Entity> AddEntity(std::string _name);
 
+		/**
+		 * @brief Starts the core
+		*/
 		void Start();
+		/**
+		 * @brief Stops the core
+		*/
 		void Stop();
 
 		template <typename T>
+		/**
+		 * @brief Finds all components of a given type
+		 * @tparam T 
+		 * @param _out 
+		*/
 		void Find(std::vector<std::shared_ptr<T>>& _out)
 		{
 			// Go through each Entity in Core.
@@ -46,8 +66,21 @@ namespace gepEngine
 			}
 		}
 
+		/**
+		 * @brief Returns the Cache
+		 * @return shared_ptr<Cache>
+		*/
 		std::shared_ptr<Cache> GetCache();
+		/**
+		 * @brief Returns the Input
+		 * @return shared_ptr<Cache>
+		*/
 	    std::shared_ptr<Input> GetInput();
+		/**
+		 * @brief Gets an entity given the name
+		 * @param _name 
+		 * @return shared_ptr<Entity>
+		*/
 		std::shared_ptr<Entity> GetEntityByName(std::string _name);
 
 	private:

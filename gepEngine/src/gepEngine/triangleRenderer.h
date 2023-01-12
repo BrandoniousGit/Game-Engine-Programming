@@ -9,6 +9,9 @@ namespace gepEngine
 {
 	struct TriangleRenderer : Component
 	{
+		/**
+		 * @brief Constructor
+		*/
 		TriangleRenderer();
 
 	private:

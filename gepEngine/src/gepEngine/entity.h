@@ -13,6 +13,11 @@ namespace gepEngine
 	struct Entity
 	{
 		template <typename T>
+		/**
+		 * @brief Adds a component to the current entity
+		 * @tparam T 
+		 * @return shared_ptr<T>
+		*/
 		std::shared_ptr<T> AddComponent()
 		{
 			std::shared_ptr<T> rtn = std::make_shared<T>();
@@ -25,6 +30,11 @@ namespace gepEngine
 		}
 
 		template <typename T>
+		/**
+		 * @brief Gets a component from an entity
+		 * @tparam T 
+		 * @return shared_ptr<T>
+		*/
 		std::shared_ptr<T> GetComponent()
 		{
 			for (std::list<std::shared_ptr<Component>>::iterator it = m_components.begin(); it != m_components.end(); it++)
@@ -41,8 +51,20 @@ namespace gepEngine
 			throw std::runtime_error("Specified component not found");
 		}
 
+		/**
+		 * @brief Gets the transform component of an entity
+		 * @return shared_ptr<Transform> 
+		*/
 		std::shared_ptr<Transform> GetTransform();
+		/**
+		 * @brief Gets the core
+		 * @return shared_ptr<Core>
+		*/
 		std::shared_ptr<Core> GetCore();
+		/**
+		 * @brief Returns the name of the entity
+		 * @return string
+		*/
 		std::string GetName();
 
 	private:

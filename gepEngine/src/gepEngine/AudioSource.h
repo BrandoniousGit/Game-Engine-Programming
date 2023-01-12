@@ -14,12 +14,22 @@ namespace gepEngine
 {
 	struct AudioSource : Component
 	{
+		/**
+		 * @brief Constructor
+		*/
 		AudioSource();
 
+		/**
+		 * @brief Returns the sourceId
+		 * @return m_sourceId
+		*/
 		ALuint GetSourceId() { return m_sourceId; }
 
-		void SetAudio();
-
+		/**
+		 * @brief Plays audio
+		 * @param clip
+		 * @param volume 
+		*/
 		void PlaySound(std::shared_ptr<AudioClip> clip, ALfloat volume);
 
 	private:

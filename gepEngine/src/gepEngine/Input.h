@@ -10,12 +10,46 @@ namespace gepEngine
 {
 	struct Input
 	{
+		/**
+		 * @brief Returns true while holding a given key down
+		 * @param code 
+		 * @return bool
+		*/
 		bool GetKey(SDL_Keycode code);
+		/**
+		 * @brief Returns true when a given key is pressed
+		 * @param code 
+		 * @return bool
+		*/
 		bool GetKeyDown(SDL_Keycode code);
+		/**
+		 * @brief Returns true when a given key is released
+		 * @param code 
+		 * @return bool
+		*/
 		bool GetKeyUp(SDL_Keycode code);
+		/**
+		 * @brief Returns true when a given mouse button is held
+		 * @param button 
+		 * @return bool
+		*/
 		bool GetButton(int button);
+		/**
+		 * @brief Returns true when a given mouse button is pressed
+		 * @param button 
+		 * @return bool
+		*/
 		bool GetButtonDown(int button);
+		/**
+		 * @brief Returns true when a given mouse button is released
+		 * @param button
+		 * @return bool
+		*/
 		bool GetButtonUp(int button);
+		/**
+		 * @brief Gets the current mouse position
+		 * @return vec3
+		*/
 		vec3 GetMousePos() { return vec3(mousePos.x, mousePos.y, 0.0f); }
 
 	private:

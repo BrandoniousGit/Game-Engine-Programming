@@ -9,8 +9,16 @@ namespace gepEngine
 {
 	struct BoxCollider : Component
 	{
+		/**
+		 * @brief Constructor
+		*/
 		BoxCollider();
 
+		/**
+		 * @brief Returns true when colliding
+		 * @param _other 
+		 * @return bool
+		*/
 		bool OnCollision(const BoxCollider& _other);
 
 	private:

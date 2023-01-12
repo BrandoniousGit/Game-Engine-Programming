@@ -9,13 +9,23 @@ namespace gepEngine
 	struct Component
 	{
 	public:
+		/**
+		 * @brief Gets the current entity
+		 * @return shared_ptr<Entity>
+		*/
 		std::shared_ptr<Entity> GetEntity() const;
 
 	private:
 		friend struct Entity;
 
+		/**
+		 * @brief Runs each frame
+		*/
 		virtual void OnTick();
 		virtual void OnDisplay();
+		/**
+		 * @brief Runs once on initialize
+		*/
 		virtual void OnInitialize();
 
 		void Tick();

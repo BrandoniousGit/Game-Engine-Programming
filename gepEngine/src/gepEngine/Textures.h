@@ -13,8 +13,16 @@ namespace gepEngine
 {
 	struct Textures : Resource
 	{
+		/**
+		 * @brief Returns the texture
+		 * @return m_texture
+		*/
 		rend::Texture* GetRendTexture() { return m_texture; }
 
+		/**
+		 * @brief Loads a texture from the cache
+		 * @param _path 
+		*/
 		void load_texture(const std::string _path);
 
 		void OnLoad();

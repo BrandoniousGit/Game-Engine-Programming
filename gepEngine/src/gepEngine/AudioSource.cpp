@@ -17,11 +17,6 @@ namespace gepEngine
 		alGenSources(1, &m_sourceId);
 	}
 
-	void AudioSource::SetAudio()
-	{
-
-	}
-
 	void AudioSource::PlaySound(std::shared_ptr<AudioClip> clip, ALfloat _volume)
 	{
 		//alSource3f(sourceId, AL_POSITION, 0.0f, 0.0f, 0.0f);

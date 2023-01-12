@@ -13,6 +13,10 @@ namespace gepEngine
 	{
 		virtual void OnLoad() = 0;
 
+		/**
+		 * @brief Gets the path to the resource
+		 * @return 
+		*/
 		std::string GetPath() const;
 
 	private:

@@ -14,8 +14,19 @@ namespace gepEngine
 
 	struct AudioClip : Resource
 	{
+		/**
+		 * @brief Gets the bufferId
+		 * @return m_bufferId
+		*/
 		ALuint GetBufferId() { return m_bufferId; }
 
+		/**
+		 * @brief Loads an audio ogg file
+		 * @param _path 
+		 * @param _buffer 
+		 * @param _format 
+		 * @param _freq 
+		*/
 		static void load_ogg(const std::string& _path, std::vector<unsigned char>& _buffer,
 			ALenum& _format, ALsizei& _freq);
 

@@ -11,9 +11,20 @@ namespace gepEngine
 {
 	struct MeshRenderer : Component
 	{
+		/**
+		 * @brief Constructor
+		*/
 		MeshRenderer();
 
+		/**
+		 * @brief Sets the texture on a given meshrenderer
+		 * @param _texture 
+		*/
 		void SetTexture(std::shared_ptr<Textures> _texture);
+		/**
+		 * @brief Sets the model on a given meshrenderer
+		 * @param _model 
+		*/
 		void SetModel(std::shared_ptr<Models> _model);
 
 	private:

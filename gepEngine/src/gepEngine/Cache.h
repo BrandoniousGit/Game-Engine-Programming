@@ -12,6 +12,11 @@ namespace gepEngine
 	struct Cache
 	{
 		template <typename T>
+		/**
+		 * @brief Loads a file with a given path
+		 * @param _path 
+		 * @return T
+		*/
 		std::shared_ptr<T> load(const std::string& _path)
 		{
 			for (size_t i = 0; i < m_resources.size(); ++i)

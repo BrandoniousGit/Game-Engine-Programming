@@ -13,8 +13,16 @@ namespace gepEngine
 {
 	struct Models : Resource
 	{
+		/**
+		 * @brief Returns the model
+		 * @return m_model
+		*/
 		rend::Model* GetRendModel() { return m_model; }
 
+		/**
+		 * @brief Loads the model into the cache
+		 * @param _path 
+		*/
 		void load_model(const std::string _path);
 
 		void OnLoad();

@@ -34,10 +34,10 @@ namespace gepEngine
 		static std::shared_ptr<Camera> GetMainCam();
 
 	private:
-		mat4 m_projection = mat4(1.0f); ///< The projection matrix
-		mat4 m_view = mat4(1.0f); ///< The viewing matrix
+		mat4 m_projection = mat4(1.0f);
+		mat4 m_view = mat4(1.0f);
 
-		static std::shared_ptr<Camera> m_main; ///< The main camera
+		static std::shared_ptr<Camera> m_main;
 
 	};
 }
