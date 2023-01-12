@@ -5,6 +5,7 @@
 #define transform GetEntity()->GetTransform()
 #define input GetEntity()->GetCore()->GetInput()
 #define getCore GetEntity()->GetCore()
+#define getComponent GetEntity()->GetComponent
 
 using namespace gepEngine;
 
@@ -14,7 +15,7 @@ struct CameraScript : Component
 	vec3 playerTransform;
 	vec3 offset;
 
-	float ySens, xSens;
+	float ySens, xSens, moveSpeed;
 
 	void OnInitialize();
 

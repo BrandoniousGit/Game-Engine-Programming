@@ -11,6 +11,10 @@ using namespace gepEngine;
 
 struct PlayerScript : Component
 {
+	int startTime;
+
+	bool movingUp, rotating, dancing;
+
 	void OnInitialize();
 
 	void OnTick();

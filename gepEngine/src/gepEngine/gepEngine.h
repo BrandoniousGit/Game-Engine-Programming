@@ -15,8 +15,8 @@
 #include "Input.h"
 #include "Camera.h"
 #include "Time.h"
-#include "Textures.h"
-#include "Models.h"
+#include "Texture.h"
+#include "Model.h"
 
 #define Shared std::shared_ptr
 

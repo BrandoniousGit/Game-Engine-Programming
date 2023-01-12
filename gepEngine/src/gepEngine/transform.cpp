@@ -10,9 +10,8 @@ namespace gepEngine
 
 		translateMat = translate(translateMat, m_position);
 
-		//funny rotation stuff
-		rotateMat = rotate(rotateMat, radians(m_rotation.x), vec3(1.0f, 0.0f, 0.0f));
 		rotateMat = rotate(rotateMat, radians(m_rotation.y), vec3(0.0f, 1.0f, 0.0f));
+		rotateMat = rotate(rotateMat, radians(m_rotation.x), vec3(1.0f, 0.0f, 0.0f));
 		rotateMat = rotate(rotateMat, radians(m_rotation.z), vec3(0.0f, 0.0f, 1.0f));
 
 		scaleMat = scale(scaleMat, m_scale);

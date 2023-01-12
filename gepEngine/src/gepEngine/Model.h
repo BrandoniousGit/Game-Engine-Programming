@@ -11,14 +11,9 @@
 
 namespace gepEngine
 {
+	struct MeshRenderer;
 	struct Model : Resource
 	{
-		/**
-		 * @brief Returns the model
-		 * @return m_model
-		*/
-		rend::Model* GetRendModel() { return m_model; }
-
 		/**
 		 * @brief Loads the model into the cache
 		 * @param _path 
@@ -28,7 +23,8 @@ namespace gepEngine
 		void OnLoad();
 
 	private:
-		rend::Model* m_model;
+		friend MeshRenderer;
+		std::shared_ptr<rend::Model> m_model;
 	};
 }
 #endif

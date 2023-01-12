@@ -11,14 +11,9 @@
 
 namespace gepEngine
 {
-	struct Textures : Resource
+	struct MeshRenderer;
+	struct Texture : Resource
 	{
-		/**
-		 * @brief Returns the texture
-		 * @return m_texture
-		*/
-		rend::Texture* GetRendTexture() { return m_texture; }
-
 		/**
 		 * @brief Loads a texture from the cache
 		 * @param _path 
@@ -28,7 +23,8 @@ namespace gepEngine
 		void OnLoad();
 
 	private:
-		rend::Texture* m_texture;
+		friend MeshRenderer;
+		std::shared_ptr<rend::Texture> m_texture;
 	};
 }
 #endif

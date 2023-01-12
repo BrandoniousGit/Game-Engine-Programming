@@ -2,8 +2,8 @@
 #define GEPENGINE_MESHRENDERER_H
 
 #include "Component.h"
-#include "Models.h"
-#include "Textures.h"
+#include "Model.h"
+#include "Texture.h"
 #include <rend/rend.h>
 #include <string>
 
@@ -20,17 +20,17 @@ namespace gepEngine
 		 * @brief Sets the texture on a given meshrenderer
 		 * @param _texture 
 		*/
-		void SetTexture(std::shared_ptr<Textures> _texture);
+		void SetTexture(std::shared_ptr<Texture> _texture);
 		/**
 		 * @brief Sets the model on a given meshrenderer
 		 * @param _model 
 		*/
-		void SetModel(std::shared_ptr<Models> _model);
+		void SetModel(std::shared_ptr<Model> _model);
 
 	private:
-		rend::Model* m_model;
+		std::shared_ptr<Model> m_model;
 		rend::Shader m_shader;
-		rend::Texture* m_texture;
+		std::shared_ptr<Texture> m_texture;
 		rend::ModelRenderer m_renderer;
 
 		void OnDisplay();

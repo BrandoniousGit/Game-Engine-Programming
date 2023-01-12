@@ -13,12 +13,12 @@ int main()
 	std::shared_ptr<AudioClip> funkyTown = coreLoad<AudioClip>("../resources/sounds/funkytown.ogg");
 	std::shared_ptr<AudioClip> catloop = coreLoad<AudioClip>("../resources/sounds/catloop.ogg");
 
-	std::shared_ptr<Models> maxwellModel = coreLoad<Models>("../resources/models/Maxwell.obj");
-	std::shared_ptr<Models> floorModel = coreLoad<Models>("../resources/models/Floor.obj");
+	std::shared_ptr<Model> maxwellModel = coreLoad<Model>("../resources/models/Maxwell.obj");
+	std::shared_ptr<Model> floorModel = coreLoad<Model>("../resources/models/Floor.obj");
 
-	std::shared_ptr<Textures> maxwellTexture = coreLoad<Textures>("../resources/textures/Maxwell_Diffuse.bmp");
-	std::shared_ptr<Textures> eMaxwellTexture = coreLoad<Textures>("../resources/textures/Evil_Maxwell.bmp");
-	std::shared_ptr<Textures> floorTexture = coreLoad<Textures>("../resources/textures/Floor_Diffuse.bmp");
+	std::shared_ptr<Texture> maxwellTexture = coreLoad<Texture>("../resources/textures/Maxwell_Diffuse.bmp");
+	std::shared_ptr<Texture> eMaxwellTexture = coreLoad<Texture>("../resources/textures/Evil_Maxwell.bmp");
+	std::shared_ptr<Texture> floorTexture = coreLoad<Texture>("../resources/textures/Floor_Diffuse.bmp");
 	//Camera ====================
 
 	std::shared_ptr<Entity> camera = core->AddEntity("mainCamera");;

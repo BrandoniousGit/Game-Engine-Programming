@@ -13,15 +13,14 @@ namespace gepEngine
 		m_shader("../resources/shaders/basic.vert", "../resources/shaders/basic.frag")
 	{}
 
-	void MeshRenderer::SetTexture(std::shared_ptr<Textures> _texture)
+	void MeshRenderer::SetTexture(std::shared_ptr<Texture> _texture)
 	{
-		m_texture = _texture->GetRendTexture();
-		m_renderer.texture(m_texture);
+		m_texture = _texture;
 	}
 
-	void MeshRenderer::SetModel(std::shared_ptr<Models> _model)
+	void MeshRenderer::SetModel(std::shared_ptr<Model> _model)
 	{
-		m_model = _model->GetRendModel();
+		m_model = _model;
 	}
 
 	void MeshRenderer::OnDisplay()
@@ -34,12 +33,12 @@ namespace gepEngine
 		((rend::Renderer*)(&m_renderer))->model(model);
 
 		m_renderer.shader(&m_shader);
-		m_renderer.model(m_model);
+		m_renderer.model(m_model->m_model.get());
 		m_renderer.depthTest(true);
 		m_renderer.backfaceCull(true);
 		m_renderer.blend(true);
 
-		m_renderer.texture(m_texture);
+		m_renderer.texture(m_texture->m_texture.get());
 		m_renderer.render();
 	}
 }

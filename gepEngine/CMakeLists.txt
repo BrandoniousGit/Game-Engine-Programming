@@ -104,11 +104,11 @@ add_library(gepEngine
 	src/gepEngine/Time.cpp
 	src/gepEngine/Time.h
 
-	src/gepEngine/Models.cpp
-	src/gepEngine/Models.h
+	src/gepEngine/Model.cpp
+	src/gepEngine/Model.h
 
-	src/gepEngine/Textures.cpp
-	src/gepEngine/Textures.h
+	src/gepEngine/Texture.cpp
+	src/gepEngine/Texture.h
 )
 
 add_library(scripts

@@ -8,11 +8,9 @@
 #include "sys/Vector.h"
 #include "sys/Zero.h"
 
-struct Texture;
-
 namespace rend
 {
-
+	struct Texture;
 struct MaterialGroup : sys::EnablePtr
 {
   Mesh mesh;
